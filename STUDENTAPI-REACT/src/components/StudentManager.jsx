@@ -57,10 +57,16 @@ const StudentManager = () => {
     try {
       await axios.post(`${baseUrl}/add`, student);
       setMessage('Student added successfully.');
+      setTimeout(()=>{
+        setMessage('');
+      },3000);
       fetchAllStudents();
       resetForm();
     } catch (error) {
       setMessage('Error adding student.');
+      setTimeout(()=>{
+        setMessage('');
+      },3000);
     }
   };
 
@@ -69,10 +75,16 @@ const StudentManager = () => {
     try {
       await axios.put(`${baseUrl}/update`, student);
       setMessage('Student updated successfully.');
+      setTimeout(()=>{
+        setMessage('');
+      },3000);
       fetchAllStudents();
       resetForm();
     } catch (error) {
       setMessage('Error updating student.');
+      setTimeout(()=>{
+        setMessage('');
+      },3000);
     }
   };
 
@@ -83,6 +95,9 @@ const StudentManager = () => {
       fetchAllStudents();
     } catch (error) {
       setMessage('Error deleting student.');
+      setTimeout(()=>{
+        setMessage('');
+      },3000);
     }
   };
 
@@ -94,6 +109,9 @@ const StudentManager = () => {
     } catch (error) {
       setFetchedStudent(null);
       setMessage('Student not found.');
+      setTimeout(()=>{
+        setMessage('');
+      },3000);
     }
   };
 
